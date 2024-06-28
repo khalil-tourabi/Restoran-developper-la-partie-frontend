@@ -1,3 +1,4 @@
+// navbar.jsx
 "use client";
 
 import {
@@ -10,12 +11,19 @@ import {
 } from "@chakra-ui/react";
 import { HamburgerIcon, CloseIcon } from "@chakra-ui/icons";
 import { SearchBar } from "./searchBar";
+import { Link } from "react-router-dom";
 
-const Links = ["Accueil", "Articles","Ajouter Article", "A Propos"];
+const Links = [
+  { name: "Accueil", path: "/" },
+  { name: "Articles", path: "/afficher-article" },
+  { name: "Ajouter Article", path: "/ajouter-article" },
+  { name: "A Propos", path: "/a-propos" },
+];
 
-const NavLink = ({ children }) => (
+const NavLink = ({ children, path }) => (
   <Box
-    as="a"
+    as={Link}
+    to={path}
     px={2}
     py={1}
     rounded={"md"}
@@ -23,7 +31,6 @@ const NavLink = ({ children }) => (
       textDecoration: "none",
       bg: useColorModeValue("gray.200", "gray.700"),
     }}
-    href={"#"}
   >
     {children}
   </Box>
@@ -51,7 +58,7 @@ export default function NavBar() {
               display={{ base: "none", md: "flex" }}
             >
               {Links.map((link) => (
-                <NavLink key={link}>{link}</NavLink>
+                <NavLink key={link.name} path={link.path}>{link.name}</NavLink>
               ))}
             </HStack>
           </HStack>
