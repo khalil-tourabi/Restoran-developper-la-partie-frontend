@@ -8,7 +8,7 @@ import APropos from "./components/A Propos/APropos";
 function App() {
   const [count, setCount] = useState(0);
 
-  return <APropos />;
+  return <Accueil />;
 }
 
 export default App;
