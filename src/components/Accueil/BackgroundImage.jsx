@@ -34,12 +34,14 @@ export default function WithBackgroundImage() {
             lineHeight={1.2}
             fontSize={useBreakpointValue({ base: "3xl", md: "4xl" })}
           >
-            Bienvenue dans notre sanctuaire culinaire, où chaque plat raconte une histoire et notre héros créatif vous invite à découvrir une cuisine inspirante et joyeuse.
+            Bienvenue dans notre sanctuaire culinaire, où chaque plat raconte
+            une histoire et notre héros créatif vous invite à découvrir une
+            cuisine inspirante et joyeuse.
           </Text>
           <Stack direction={"row"}>
             <Button
-            as={Link}
-            to={'/articles'}
+              as={Link}
+              to={"/articles"}
               bg={"blue.400"}
               rounded={"full"}
               color={"white"}

@@ -1,5 +1,3 @@
-"use client";
-
 import {
   Box,
   chakra,
@@ -24,8 +22,7 @@ import { MdLocalShipping } from "react-icons/md";
 import { useParams } from "react-router-dom";
 
 export default function Article() {
-
-  const [data, setData] = useState([])
+  const [data, setData] = useState([]);
 
   const { id } = useParams();
 
@@ -49,9 +46,7 @@ export default function Article() {
           <Image
             rounded={"md"}
             alt={"product image"}
-            src={
-              data.image
-            }
+            src={data.image}
             fit={"cover"}
             align={"center"}
             w={"100%"}
@@ -86,9 +81,7 @@ export default function Article() {
             }
           >
             <VStack spacing={{ base: 4, sm: 6 }}>
-              <Text fontSize={"lg"}>
-                {data.description}
-              </Text>
+              <Text fontSize={"lg"}>{data.description}</Text>
             </VStack>
           </Stack>
         </Stack>

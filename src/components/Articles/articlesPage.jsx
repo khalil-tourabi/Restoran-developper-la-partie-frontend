@@ -7,7 +7,7 @@ import {
   HStack,
   useColorModeValue,
   Button,
-} from "@chakra-ui/react"; // Assuming Chakra UI for Box, Img, Heading, Text, HStack
+} from "@chakra-ui/react";
 import axios from "axios";
 import { Link } from "react-router-dom";
 
@@ -50,22 +50,22 @@ const ArticlesPage = () => {
         {products.map((product) => (
           <Box
             key={product.id}
-            w={{ base: "90%", sm: "xs" }} // Adjust width based on screen size
+            w={{ base: "90%", sm: "xs" }}
             rounded="sm"
             my={5}
-            mx={2} // Adjust horizontal margin
+            mx={2} 
             overflow="hidden"
             bg="white"
             borderWidth="1px"
             borderColor="black"
             boxShadow={useColorModeValue("6px 6px 0 black", "6px 6px 0 cyan")}
             flex="1"
-            maxW={{ base: "100%", sm: "xs" }} // Adjust maximum width based on screen size
-            minW={{ base: "100%", sm: "xs" }} // Adjust minimum width based on screen size
+            maxW={{ base: "100%", sm: "xs" }} 
+            minW={{ base: "100%", sm: "xs" }} 
           >
             <Box h="200px" borderBottom="1px" borderColor="black">
               <Img
-                src={product.image || "https://via.placeholder.com/200"} // Use product image or a placeholder
+                src={product.image || "https://via.placeholder.com/200"} 
                 roundedTop="sm"
                 objectFit="cover"
                 h="full"

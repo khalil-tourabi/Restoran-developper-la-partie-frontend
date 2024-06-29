@@ -14,7 +14,6 @@ const LatestArticles = () => {
   const { products } = useContext(ProductContext);
   console.log(products);
 
-  // Get the last 3 elements of the products array
   const latestProducts = products.slice(-3);
 
   return (
@@ -32,8 +31,8 @@ const LatestArticles = () => {
                     src={product.image}
                     alt={product.name}
                     borderRadius="md"
-                    width="250px" // Replace with your desired width
-                    height="200px" // Image will scale proportionally based on the width
+                    width="250px" 
+                    height="200px" 
                   />
                   <Heading size="md" mt={4}>
                     {product.name}

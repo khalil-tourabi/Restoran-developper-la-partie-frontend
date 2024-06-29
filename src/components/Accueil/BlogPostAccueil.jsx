@@ -27,9 +27,9 @@ export default function PostWithLike() {
         <Flex justifyContent="center" flexWrap="wrap">
           {lastThreeProducts.map((product, index) => (
             <Link
-              to={`/article/${product.id}`} // Change this to the appropriate route
+              to={`/article/${product.id}`}
               key={index}
-              style={{ textDecoration: 'none' }}
+              style={{ textDecoration: "none" }}
             >
               <Box
                 w={{ base: "90%", sm: "xs" }}
@@ -72,26 +72,26 @@ export default function PostWithLike() {
           ))}
         </Flex>
         <center>
-        <Link
-          to={"/articles"}
-          style={{
-            display: "inline-block",
-            padding: "10px 20px",
-            backgroundColor: "#2b6cb0",
-            color: "white",
-            textDecoration: "none",
-            borderRadius: "5px",
-            boxShadow: "0 2px 4px rgba(0, 0, 0, 0.1)",
-            transition: "background-color 0.3s ease",
-            textAlign: "center",
-            fontSize: "16px",
-            fontWeight: "bold",
-            cursor: "pointer",
-            marginBottom: "10px"
-          }}
-        >
-          Show More
-        </Link>
+          <Link
+            to={"/articles"}
+            style={{
+              display: "inline-block",
+              padding: "10px 20px",
+              backgroundColor: "#2b6cb0",
+              color: "white",
+              textDecoration: "none",
+              borderRadius: "5px",
+              boxShadow: "0 2px 4px rgba(0, 0, 0, 0.1)",
+              transition: "background-color 0.3s ease",
+              textAlign: "center",
+              fontSize: "16px",
+              fontWeight: "bold",
+              cursor: "pointer",
+              marginBottom: "10px",
+            }}
+          >
+            Show More
+          </Link>
         </center>
       </React.Fragment>
     </Box>

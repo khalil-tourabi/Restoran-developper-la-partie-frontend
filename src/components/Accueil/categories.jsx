@@ -11,7 +11,7 @@ import {
   Button,
   ButtonGroup,
   Flex,
-  Center, // Import Center component from Chakra UI
+  Center,
 } from "@chakra-ui/react";
 
 const Categories = () => {
@@ -48,7 +48,6 @@ const Categories = () => {
           </CardFooter>
         </Card>
 
-        {/* Repeat the above Card component for each item */}
 
         <Card maxW="sm" m="4">
           <CardBody>
@@ -77,7 +76,6 @@ const Categories = () => {
           </CardFooter>
         </Card>
 
-        {/* Repeat the above Card component for each item */}
 
         <Card maxW="sm" m="4">
           <CardBody>
