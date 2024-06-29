@@ -1,53 +1,58 @@
-import React from "react";
-import { SimpleGrid, Box, Heading, Text, Button } from "@chakra-ui/react";
+import React, { useContext } from "react";
+import {
+  SimpleGrid,
+  Box,
+  Heading,
+  Text,
+  Button,
+  Image,
+} from "@chakra-ui/react";
+import ProductContext from "../ProductsContext";
+import { Link } from "react-router-dom";
 
-const LatestArticles = () => (
-  <>
-    <Heading textAlign="center" margin={7}>
-      Dernier Articles
-    </Heading>{" "}
-    <SimpleGrid columns={[1, 2, 3]} spacing={4}>
-      <Box>
-        <center>
-          <Box borderWidth="1px" borderRadius="lg" p={4}>
-            <Heading size="md">Customer dashboard</Heading>
-            <Text mt={2}>
-              View a summary of all your customers over the last month.
-            </Text>
-            <Button mt={4} colorScheme="blue">
-              View here
-            </Button>
-          </Box>
-        </center>
-      </Box>
-      <Box>
-        <center>
-          <Box borderWidth="1px" borderRadius="lg" p={4}>
-            <Heading size="md">Customer dashboard</Heading>
-            <Text mt={2}>
-              View a summary of all your customers over the last month.
-            </Text>
-            <Button mt={4} colorScheme="blue">
-              View here
-            </Button>
-          </Box>
-        </center>
-      </Box>
-      <Box>
-        <center>
-          <Box borderWidth="1px" borderRadius="lg" p={4}>
-            <Heading size="md">Customer dashboard</Heading>
-            <Text mt={2}>
-              View a summary of all your customers over the last month.
-            </Text>
-            <Button mt={4} colorScheme="blue">
-              View here
-            </Button>
-          </Box>
-        </center>
-      </Box>
-    </SimpleGrid>
-  </>
-);
+const LatestArticles = () => {
+  const { products } = useContext(ProductContext);
+  console.log(products);
+
+  // Get the last 3 elements of the products array
+  const latestProducts = products.slice(-3);
+
+  return (
+    <Box p="5%">
+      <>
+        <Heading textAlign="center" margin={7}>
+          Dernier Articles
+        </Heading>
+        <SimpleGrid columns={[1, 2, 3]} spacing={4}>
+          {latestProducts.map((product, index) => (
+            <Box key={index}>
+              <center>
+                <Box borderWidth="1px" borderRadius="lg" p={4}>
+                  <Image
+                    src={product.image}
+                    alt={product.name}
+                    borderRadius="md"
+                  />
+                  <Heading size="md" mt={4}>
+                    {product.name}
+                  </Heading>
+                  <Text mt={2}>{product.category}</Text>
+                  <Button
+                    as={Link}
+                    to={`/article/${product.id}`}
+                    mt={4}
+                    colorScheme="blue"
+                  >
+                    View here
+                  </Button>
+                </Box>
+              </center>
+            </Box>
+          ))}
+        </SimpleGrid>
+      </>
+    </Box>
+  );
+};
 
 export default LatestArticles;

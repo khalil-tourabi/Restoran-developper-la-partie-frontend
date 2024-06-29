@@ -24,22 +24,25 @@ const Categories = () => {
         <Card maxW="sm" m="4">
           <CardBody>
             <Image
-              src="https://images.unsplash.com/photo-1555041469-a586c61ea9bc?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80"
+              src="https://images.unsplash.com/photo-1464306208223-e0b4495a5553?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
               alt="Green double couch with wooden legs"
               borderRadius="lg"
             />
             <Stack mt="6" spacing="3">
-              <Heading size="md">Living room Sofa</Heading>
+              <Heading size="md">BreakFast</Heading>
               <Text>
-                This sofa is perfect for modern tropical spaces, baroque
-                inspired spaces, earthy toned spaces and for people who love a
-                chic design with a sprinkle of vintage design.
+                Discover delightful breakfast cooking recipes to elevate your
+                mornings!
               </Text>
             </Stack>
           </CardBody>
           <Divider />
           <CardFooter>
-            <Button variant="solid" colorScheme="blue">
+            <Button
+              variant="solid"
+              colorScheme="blue"
+              style={{ margin: "5px" }}
+            >
               Show more{" "}
             </Button>
           </CardFooter>
@@ -50,22 +53,25 @@ const Categories = () => {
         <Card maxW="sm" m="4">
           <CardBody>
             <Image
-              src="https://images.unsplash.com/photo-1555041469-a586c61ea9bc?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80"
+              src="https://plus.unsplash.com/premium_photo-1672242676674-f4349cc6470e?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
               alt="Green double couch with wooden legs"
               borderRadius="lg"
             />
             <Stack mt="6" spacing="3">
-              <Heading size="md">Living room Sofa</Heading>
+              <Heading size="md">Lunch</Heading>
               <Text>
-                This sofa is perfect for modern tropical spaces, baroque
-                inspired spaces, earthy toned spaces and for people who love a
-                chic design with a sprinkle of vintage design.
+                Discover delightful lunch cooking recipes to elevate your
+                midday!
               </Text>
             </Stack>
           </CardBody>
           <Divider />
           <CardFooter>
-            <Button variant="solid" colorScheme="blue">
+            <Button
+              variant="solid"
+              colorScheme="blue"
+              style={{ margin: "5px" }}
+            >
               Show more{" "}
             </Button>
           </CardFooter>
@@ -76,22 +82,25 @@ const Categories = () => {
         <Card maxW="sm" m="4">
           <CardBody>
             <Image
-              src="https://images.unsplash.com/photo-1555041469-a586c61ea9bc?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80"
+              src="https://images.unsplash.com/photo-1522906456132-bac22adad34e?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
               alt="Green double couch with wooden legs"
               borderRadius="lg"
             />
             <Stack mt="6" spacing="3">
-              <Heading size="md">Living room Sofa</Heading>
+              <Heading size="md">Dinner</Heading>
               <Text>
-                This sofa is perfect for modern tropical spaces, baroque
-                inspired spaces, earthy toned spaces and for people who love a
-                chic design with a sprinkle of vintage design.
+                Explore delightful dinner cooking recipes for a satisfying
+                evening!
               </Text>
             </Stack>
           </CardBody>
           <Divider />
           <CardFooter>
-            <Button variant="solid" colorScheme="blue">
+            <Button
+              variant="solid"
+              colorScheme="blue"
+              style={{ margin: "5px" }}
+            >
               Show more{" "}
             </Button>
           </CardFooter>

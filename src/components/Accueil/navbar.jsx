@@ -15,7 +15,7 @@ import { Link } from "react-router-dom";
 
 const Links = [
   { name: "Accueil", path: "/" },
-  { name: "Articles", path: "/afficher-article" },
+  { name: "Articles", path: "/articles" },
   { name: "Ajouter Article", path: "/ajouter-article" },
   { name: "A Propos", path: "/a-propos" },
 ];

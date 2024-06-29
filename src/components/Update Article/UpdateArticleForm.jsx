@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import {
   FormControl,
   FormLabel,
@@ -8,10 +8,11 @@ import {
   Button,
 } from "@chakra-ui/react";
 import axios from "axios";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import { v4 as uuidv4 } from 'uuid';
 
-const AjouterArticleForm = () => {
+const UpdateArticleForm = () => {
+
   const [post, setPost] = useState({
     name: "",
     category: "",
@@ -20,32 +21,44 @@ const AjouterArticleForm = () => {
     id: uuidv4(),
   });
 
+  const { id } = useParams();
+
+  useEffect(() => {
+    axios
+      .get(`http://localhost:3000/posts/${id}`)
+      .then((res) => {
+        setPost(res.data);
+      })
+      .catch((err) => console.log(err));
+  }, [id]);
+
   const navigate = useNavigate();
 
   const handleChange = (e) => {
     const { name, value } = e.target;
-    setPost((prevPost) => ({
+    setPost(prevPost => ({
       ...prevPost,
       [name]: value,
     }));
   };
 
   const handleFileChange = (e) => {
-    setPost((prevPost) => ({
+    const file = e.target.files[0];
+    setPost(prevPost => ({
       ...prevPost,
-      image: e.target.files[0]
+      image: file,
     }));
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    axios.post("http://localhost:3000/posts", post)
+    axios.put(`http://localhost:3000/posts/${id}`, post)
       .then((res) => {
         console.log(res);
         navigate("/articles");
       })
       .catch((err) => {
-        console.error("Error while adding user:", err);
+        console.error("Error while modifying user:", err);
       });
   };
 
@@ -122,4 +135,4 @@ const AjouterArticleForm = () => {
   );
 };
 
-export default AjouterArticleForm;
+export default UpdateArticleForm;
