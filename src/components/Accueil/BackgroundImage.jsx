@@ -8,6 +8,7 @@ import {
   VStack,
   useBreakpointValue,
 } from "@chakra-ui/react";
+import { Link } from "react-router-dom";
 
 export default function WithBackgroundImage() {
   return (
@@ -37,6 +38,8 @@ export default function WithBackgroundImage() {
           </Text>
           <Stack direction={"row"}>
             <Button
+            as={Link}
+            to={'/articles'}
               bg={"blue.400"}
               rounded={"full"}
               color={"white"}

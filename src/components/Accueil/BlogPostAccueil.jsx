@@ -27,7 +27,7 @@ export default function PostWithLike() {
         <Flex justifyContent="center" flexWrap="wrap">
           {lastThreeProducts.map((product, index) => (
             <Link
-              to={`/products/${product.id}`} // Change this to the appropriate route
+              to={`/article/${product.id}`} // Change this to the appropriate route
               key={index}
               style={{ textDecoration: 'none' }}
             >
@@ -67,17 +67,6 @@ export default function PostWithLike() {
                     {product.category}
                   </Text>
                 </Box>
-                <HStack
-                  borderTop="1px"
-                  borderColor="black"
-                  p={4}
-                  justify="space-between"
-                >
-                  <Text fontSize="md" fontWeight="semibold">
-                    View more
-                  </Text>
-                  <BsArrowUpRight />
-                </HStack>
               </Box>
             </Link>
           ))}

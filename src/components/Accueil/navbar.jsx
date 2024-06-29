@@ -12,6 +12,7 @@ import {
 import { HamburgerIcon, CloseIcon } from "@chakra-ui/icons";
 import { SearchBar } from "./searchBar";
 import { Link } from "react-router-dom";
+import ProductContext from "../ProductsContext";
 
 const Links = [
   { name: "Accueil", path: "/" },

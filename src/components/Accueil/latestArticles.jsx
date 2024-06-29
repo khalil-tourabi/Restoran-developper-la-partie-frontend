@@ -32,6 +32,8 @@ const LatestArticles = () => {
                     src={product.image}
                     alt={product.name}
                     borderRadius="md"
+                    width="250px" // Replace with your desired width
+                    height="200px" // Image will scale proportionally based on the width
                   />
                   <Heading size="md" mt={4}>
                     {product.name}
