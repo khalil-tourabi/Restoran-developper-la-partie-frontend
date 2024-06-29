@@ -10,9 +10,9 @@ import {
 import axios from "axios";
 import { useNavigate, useParams } from "react-router-dom";
 import { v4 as uuidv4 } from 'uuid';
+import { Cloudinary } from 'cloudinary-core';
 
 const UpdateArticleForm = () => {
-
   const [post, setPost] = useState({
     name: "",
     category: "",
@@ -34,9 +34,15 @@ const UpdateArticleForm = () => {
 
   const navigate = useNavigate();
 
+  const cloudinary = new Cloudinary({
+    cloud_name: 'diuoo1cnx',
+    api_key: '328562688448333',
+    api_secret: 'yupXjn_W-Dftnp1pHZ4ulYznVNs',
+  });
+
   const handleChange = (e) => {
     const { name, value } = e.target;
-    setPost(prevPost => ({
+    setPost((prevPost) => ({
       ...prevPost,
       [name]: value,
     }));
@@ -44,22 +50,36 @@ const UpdateArticleForm = () => {
 
   const handleFileChange = (e) => {
     const file = e.target.files[0];
-    setPost(prevPost => ({
+    setPost((prevPost) => ({
       ...prevPost,
       image: file,
     }));
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    axios.put(`http://localhost:3000/posts/${id}`, post)
-      .then((res) => {
-        console.log(res);
-        navigate("/articles");
-      })
-      .catch((err) => {
-        console.error("Error while modifying user:", err);
-      });
+
+    if (post.image && typeof post.image !== 'string') {
+      const formData = new FormData();
+      formData.append('file', post.image);
+      formData.append('upload_preset', 'restoran');
+
+      try {
+        const res = await axios.post(`https://api.cloudinary.com/v1_1/${cloudinary.config().cloud_name}/image/upload`, formData);
+        const imageUrl = res.data.secure_url;
+        post.image = imageUrl;
+      } catch (err) {
+        console.error("Error while uploading image:", err);
+        return;
+      }
+    }
+
+    try {
+      await axios.put(`http://localhost:3000/posts/${id}`, post);
+      navigate("/articles");
+    } catch (err) {
+      console.error("Error while modifying post:", err);
+    }
   };
 
   return (
@@ -128,7 +148,7 @@ const UpdateArticleForm = () => {
           borderColor="green.500"
           type="submit"
         >
-          Ajouter
+          Modifier
         </Button>
       </form>
     </div>

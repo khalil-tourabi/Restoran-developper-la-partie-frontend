@@ -10,6 +10,8 @@ import {
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import { v4 as uuidv4 } from 'uuid';
+import { Cloudinary } from 'cloudinary-core';
+// import 'dotenv/config'
 
 const AjouterArticleForm = () => {
   const [post, setPost] = useState({
@@ -20,7 +22,14 @@ const AjouterArticleForm = () => {
     id: uuidv4(),
   });
 
+
   const navigate = useNavigate();
+
+  const cloudinary = new Cloudinary({
+    cloud_name: 'diuoo1cnx',
+    api_key: '328562688448333',
+    api_secret: 'yupXjn_W-Dftnp1pHZ4ulYznVNs',
+  });
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -37,16 +46,32 @@ const AjouterArticleForm = () => {
     }));
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    axios.post("http://localhost:3000/posts", post)
-      .then((res) => {
-        console.log(res);
+
+    if (post.image) {
+      const formData = new FormData();
+      formData.append('file', post.image);
+      formData.append('upload_preset', 'restoran');
+
+      try {
+        const res = await axios.post(`https://api.cloudinary.com/v1_1/${cloudinary.config().cloud_name}/image/upload`, formData);
+        const imageUrl = res.data.secure_url;
+        post.image = imageUrl;
+
+        await axios.post("http://localhost:3000/posts", post);
         navigate("/articles");
-      })
-      .catch((err) => {
-        console.error("Error while adding user:", err);
-      });
+      } catch (err) {
+        console.error("Error while uploading image or adding post:", err);
+      }
+    } else {
+      try {
+        await axios.post("http://localhost:3000/posts", post);
+        navigate("/articles");
+      } catch (err) {
+        console.error("Error while adding post:", err);
+      }
+    }
   };
 
   return (

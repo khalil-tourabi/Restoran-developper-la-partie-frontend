@@ -2,8 +2,8 @@
   "posts": [
     {
       "name": "Object 1",
-      "category": "Category A",
-      "image": "object1.jpg",
+      "category": "Dinner",
+      "image": "https://res.cloudinary.com/diuoo1cnx/image/upload/v1719674810/ikfuoznnhmn3dahxhx14.jpg",
       "description": "Description of Object 1.",
       "id": "4a48"
     },
@@ -29,25 +29,25 @@
       "id": "44b4"
     },
     {
-      "name": "Object 3",
-      "category": "Category A",
-      "image": "object3.jpg",
-      "description": "Description of Object 3.",
-      "id": "67c6"
-    },
-    {
       "name": "Object 1",
-      "category": "Category A",
-      "image": "object1.jpg",
+      "category": "Dinner",
+      "image": "https://res.cloudinary.com/diuoo1cnx/image/upload/v1719674914/czyrp9ltbuhs94yqgcgm.jpg",
       "description": "Description of Object 1.",
       "id": "72ce"
     },
     {
       "id": "bf88490b-3ab9-48e8-acf2-1a4b1bcda1ae",
       "name": "Khobz o zit",
-      "category": "BreakFast",
-      "image": {},
+      "category": "Lunch",
+      "image": "https://res.cloudinary.com/diuoo1cnx/image/upload/v1719674970/sw3tnxuzcychjaegd1mk.jpg",
       "description": "this is a test please work"
+    },
+    {
+      "id": "9212c809-c300-40d9-8cab-bb90d6870762",
+      "name": "hhhhhhhhh",
+      "category": "BreakFast",
+      "image": "https://res.cloudinary.com/diuoo1cnx/image/upload/v1719674276/milbyvluytbf7zmmuhzf.jpg",
+      "description": "ggggggggggg"
     }
   ]
 }

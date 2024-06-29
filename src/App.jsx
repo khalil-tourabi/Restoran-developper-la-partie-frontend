@@ -4,8 +4,8 @@ import Accueil from "./components/Accueil/Accueil";
 import AjouterArticle from "./components/Ajouter Article/AJouterArticle";
 import APropos from "./components/A Propos/APropos";
 import Articles from "./components/Articles/Articles";
-import Article from "./components/Afficher Article/Article";
 import UpdateArticle from "./components/Update Article/UpdateArticle";
+import AfficherArticle from "./components/Afficher Article/AfficherArticle"
 
 function App() {
   return (
@@ -15,7 +15,7 @@ function App() {
         <Route path="/ajouter-article" element={<AjouterArticle />} />
         <Route path="/a-propos" element={<APropos />} />
         <Route path="/articles" element={<Articles />} />
-        <Route path="/article/:id" element={<Article />} />
+        <Route path="/article/:id" element={<AfficherArticle />} />
         <Route path="/updatepost/:id" element={<UpdateArticle />} />
       </Routes>
     </Router>

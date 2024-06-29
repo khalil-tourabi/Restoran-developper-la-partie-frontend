@@ -65,7 +65,7 @@ const ArticlesPage = () => {
           >
             <Box h="200px" borderBottom="1px" borderColor="black">
               <Img
-                src={product.imageUrl || "https://via.placeholder.com/200"} // Use product image or a placeholder
+                src={product.image || "https://via.placeholder.com/200"} // Use product image or a placeholder
                 roundedTop="sm"
                 objectFit="cover"
                 h="full"
